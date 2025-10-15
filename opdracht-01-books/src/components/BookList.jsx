@@ -1,3 +1,4 @@
+import BookCounter from "./BookCounter";
 import { useState} from 'react';
 import Book from "./Book";
 
@@ -25,6 +26,7 @@ const BookList = () => {
 
     return (
         <section className='book'>
+            <BookCounter aantal={books.length} />
             {books.map((book) => (
                 <Book
                 title={book.title}
