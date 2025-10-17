@@ -1,23 +1,14 @@
-import {useState} from 'react';
-import Menu from "./Menu";
-import menu from "../data/menuData";
-
-
-const MenuList = () => {
-
-    const [gerechten, setGerechten] = useState(menu);
-
-
-
-    return ( 
-
-        <section className="menu-container">
-            {gerechten.map((gerecht) => (
-                <Menu
-                key={gerecht.id}   {...gerecht} />
-            ))}
-        </section>
-     );
-}
+import '../App.css';
+import data from '../data.js'
+import Menu from "./Menu.jsx";
  
-export default MenuList;
+export default function MenuList() {
+ 
+  return (
+     <section className="section-center">
+        {data.map(({ id, title, price, img, desc }) => (
+          <Menu id={id} title={title} price={price} img={img} desc={desc} />
+        ))}
+      </section>
+  );
+}
