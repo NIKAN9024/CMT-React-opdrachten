@@ -1,4 +1,4 @@
-import Header from './components/Header';
+import Header from './components/header.jsx';
 import BookList from './components/BookList';
 import Layout from './components/Layout';
 import './App.css';
