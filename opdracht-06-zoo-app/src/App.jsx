@@ -1,17 +1,21 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import HomePage from './Pages/HomePage';
-import AnimalDetail from './Pages/AnimalDetail';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Projects from "./pages/Projects";
+import Navbar from "./components/Navbar";
+import "./App.css";
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/animal/:animalId" element={<AnimalDetail />} />
+        <Route index element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/projects" element={<Projects />} />
       </Routes>
     </BrowserRouter>
   );
 }
-
-export default App;
