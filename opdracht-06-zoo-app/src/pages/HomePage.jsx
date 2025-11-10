@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import  animals  from '../animals.js';
+import  animals  from './animals.js';
 import Animal from '../components/Animal';
 
 const Home = () => {

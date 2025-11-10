@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import animals from '../animals';
+import animals from './animals';
 
 const AnimalDetail = () => {
   const { animalId } = useParams();
