@@ -8,19 +8,19 @@ const AnimalDetail = () => {
   const animal = animals.find((a) => a.id === Number(animalId));
 
   if (!animal) {
-    return <div>Dier niet gevonden</div>;
+    return <section>Dier niet gevonden</section>;
   }
 
   return (
-    <div className="detail-card">
+    <section className="detail-card">
       <img src={animal.imageUrl} alt={animal.name} /> {}
       <h2>{animal.name}</h2>
       <p><strong>Leefomgeving:</strong> {animal.habitat}</p>
       <p><strong>Dieet:</strong> {animal.diet}</p>
       <p><strong>Beschrijving:</strong> {animal.description}</p>
       <button className="back-btn" onClick={() => navigate('/')}>Terug</button>
-    </div>
+    </section>
   );
 };
 
-export default AnimalDetail;
+export default AnimalPage;
