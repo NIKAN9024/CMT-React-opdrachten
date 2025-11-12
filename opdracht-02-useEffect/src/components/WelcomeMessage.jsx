@@ -1,14 +1,26 @@
 import React, { useState, useEffect } from 'react';
 
 const WelcomeMessage = () => {
-    const [message, setMessage] = useState('Welkom!');
+    const [message, setMessage] = useState('');
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setMessage('Fijn dat je er bent!');
-        }, 3000);
+       
+        const currentTime = new Date();
+        const hours = currentTime.getHours();
 
-        return () => clearTimeout(timer);
+        
+      let newMessage = '';
+
+        if (hours < 12) {
+            newMessage = 'Goedemorgen!';
+        } else if (hours < 18) {
+            newMessage = 'Goedemiddag!';
+        } else {
+            newMessage = 'Goedenavond!';
+        }
+
+        
+        setMessage(newMessage);
     }, []);
 
     return (
@@ -19,6 +31,3 @@ const WelcomeMessage = () => {
 };
 
 export default WelcomeMessage;
-
-
-
